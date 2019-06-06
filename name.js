@@ -1,4 +1,4 @@
-let input, button, greeting;
+var input, button, greeting;
 
 function setup() {
   // create canvas
@@ -11,8 +11,8 @@ function setup() {
   inputFood = createInput();
   greetingFood = createElement('h2', 'What is your favorite food?');
   
-  inputName.position(20, 65);
-  inputFood.position(20, 150);
+  inputName.position(100, 100);
+  inputFood.position(100, 250);
 
   button = createButton('submit');
   button.position(60, 200);
@@ -33,7 +33,7 @@ function greet() {
   inputName.value('');
   inputFood.value('');
   
-  for (let i = 0; i < 20; i++) {
+  for (var i = 0; i < 20; i++) {
     push();
     fill(random(255), 255, 255);
     translate(random(width), random(height));
