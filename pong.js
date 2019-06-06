@@ -1,15 +1,15 @@
 var p1 = {
   x: 25,
-  y: 300,
-  ySpeed: 10,
+  y: 0,
+  ySpeed: 15,
   width: 15,
   height: 100,
   score: 0
 };
 
 var p2 = {
-  x: 575,
-  y: 300,
+  x: 0,
+  y: 0,
   width: 15,
   height: 100,
   score: 0
@@ -18,7 +18,7 @@ var p2 = {
 var ball = {
   x: 300,
   y: 300,
-  xSpeed: 5,
+  xSpeed: 10,
   ySpeed: 0,
   r: 20
 };
@@ -26,8 +26,11 @@ var ball = {
 count = 0;
 
 function setup() {
-  createCanvas(1430, 830);
+  createCanvas(1430, 846);
   ball.ySpeed = random(-7, 7);
+  p1.y = height/2;
+  p2.x = width-25;
+  p2.y = height/2;
 }
 
 function draw() {
@@ -80,8 +83,8 @@ function draw() {
 }
 
 function collide() {
-  if (ball.x == 40 && ball.y >= p1.y - 50 && ball.y <= p1.y + 50 || ball.x == 560 && ball.y >= p2.y - 50 && ball.y <= p2.y + 50) {
-    ball.xSpeed *= -1;
+  if (ball.x <= 40 && ball.y >= p1.y - 50 && ball.y <= p1.y + 50 || ball.x >= width-40 && ball.y >= p2.y - 50 && ball.y <= p2.y + 50) {
+    ball.xSpeed *= -1.1;
     ball.ySpeed = random(-7, 7);
     count++;
   }
@@ -96,14 +99,14 @@ function score() {
     p2.score++;
     ball.x = width / 2;
     ball.y = height / 2;
-    ball.xSpeed = -5;
+    ball.xSpeed = -10;
     ball.ySpeed = 0;
     count = 0;
   } else if (ball.x >= width) {
     p1.score++;
     ball.x = width / 2;
-    ball.y = height / 2
-    ball.xSpeed = 5;
+    ball.y = height / 2;
+    ball.xSpeed = 10;
     ball.ySpeed = 0;
     count = 0;
   }
