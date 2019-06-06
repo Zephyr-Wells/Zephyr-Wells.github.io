@@ -3,7 +3,7 @@ var numBubbles = 100;
 var overlapping
 
 function setup() {
-  createCanvas(1430, 830);
+  createCanvas(1440, 846);
   
   for (var i = 0; i < numBubbles; i++) {
     var r = random(20, 60);

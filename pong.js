@@ -26,7 +26,7 @@ var ball = {
 count = 0;
 
 function setup() {
-  createCanvas(1430, 846);
+  createCanvas(1440, 846);
   ball.ySpeed = random(-7, 7);
   p1.y = height/2;
   p2.x = width-25;
