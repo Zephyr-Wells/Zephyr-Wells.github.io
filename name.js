@@ -12,14 +12,14 @@ function setup() {
   greetingFood = createElement('h2', 'What is your favorite food?');
   
   inputName.position(100, 100);
-  inputFood.position(100, 250);
+  inputFood.position(100, 200);
 
   button = createButton('submit');
-  button.position(60, 200);
+  button.position(100, 250);
   button.mousePressed(greet);
   
-  greetingName.position(20, 5);
-  greetingFood.position(20, 90);
+  greetingName.position(100, 105);
+  greetingFood.position(100, 200);
 
   textAlign(CENTER);
   textSize(50);
@@ -33,7 +33,7 @@ function greet() {
   inputName.value('');
   inputFood.value('');
   
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 100; i++) {
     push();
     fill(random(255), 255, 255);
     translate(random(width), random(height));
